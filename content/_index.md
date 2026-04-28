@@ -25,9 +25,9 @@ chapter: false
 
 &emsp; **Class:** AWS082025
 
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
+&emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
-&emsp; **Internship Position:** FCJ Cloud Intern
+&emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
 
 &emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
 
