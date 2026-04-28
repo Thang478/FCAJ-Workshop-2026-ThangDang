@@ -12,7 +12,7 @@ pre: " <b> 1.6. </b> "
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
+* Connect and get acquainted with members of First Cloud AI Journey.
 * Understand basic AWS services, how to use the console & CLI.
 
 ### Tasks to be carried out this week:
