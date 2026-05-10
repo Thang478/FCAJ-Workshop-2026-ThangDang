@@ -17,7 +17,7 @@ pre: "<b> 1.1. </b>"
 | :--- | :--- | :--- | :--- |
 | 05/05/2026 | Đọc nội quy, quy định dự án và thiết lập kho lưu trữ GitHub cá nhân (Fork báo cáo). | 04/05/2026 | FCAJ Rule and Requirement |
 | 06/05/2026 | Tìm hiểu lộ trình học tập, Playlist 2025 và nghiên cứu chính sách AWS Free Tier 2025. | 06/05/2026 | AWS Study Group |
-| 08/05/2026 | Đăng ký thành công tài khoản AWS Free Tier. Cấu hình AWS Budgets để quản lý ngân sách $200. | 08/05/2026 | Cảnh báo: 12.5%, 25%, 50%, 100% |
+| 08/05/2026 | Đăng ký thành công tài khoản AWS Free Tier. Cấu hình AWS Budgets để quản lý ngân sách $200. | 08/05/2026 | Cảnh báo: 12.5%, 25%, 50%, 75% |
 | 10/05/2026 | Thực hành triển khai 5 nhiệm vụ cơ bản: <br>- Khởi chạy máy chủ EC2.<br>- Tạo ứng dụng web serverless với AWS Lambda.<br>- Tạo cơ sở dữ liệu Amazon RDS.<br>- Dọn dẹp tài nguyên (Clean-up). | 10/05/2026 | AWS Management Console |
 | 10/05/2026 | Trải nghiệm Amazon Bedrock Playground. Mở Support Ticket để xin cấp quyền truy cập mô hình Anthropic Claude. | 10/05/2026 | Đang chờ AWS Support phản hồi |
 
