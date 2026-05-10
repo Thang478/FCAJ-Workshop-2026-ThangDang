@@ -1,57 +1,31 @@
 ---
 title: "Week 1 Worklog"
-date: 2024-01-01
+date: 2026-05-10
 weight: 1
 chapter: false
-pre: " <b> 1.1. </b> "
+pre: "<b> 1.1. </b>"
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Week 1 Objectives:**
+* Understand the rules, learning path, and evaluation criteria of the AWS FCAJ Bootcamp 2026 internship program.
+* Learn fundamental AWS concepts.
+* Successfully set up a secure cloud practice environment using the AWS Free Tier 2025 policy.
 
-### Week 1 Objectives:
+**Tasks completed this week:**
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+| Start Date | Task | Completion Date | Notes |
+| :--- | :--- | :--- | :--- |
+| 05/05/2026 | Read project rules, regulations, and set up personal GitHub repository (Fork report template). | 05/05/2026 | FCAJ Rule and Requirement |
+| 06/05/2026 | Get an overview of what AWS is through the first 1-2 tutorial videos on YouTube (2025 Playlist). | 06/05/2026 | Grasp the console interface and basic Cloud concepts |
+| 08/05/2026 | Successfully register an AWS Free Tier account and configure initial settings. | 08/05/2026 | Complete practice account creation |
+| 10/05/2026 | Configure AWS Budgets for cost management. Set up billing alerts to ensure cost safety. | 10/05/2026 | Alert thresholds: 12.5%, 25%, 50%, 75% |
+| 10/05/2026 | Practice 5 core tasks to get $200 credit: <br>- Launch an EC2 instance.<br>- Create a serverless web app (AWS Lambda).<br>- Create a database (Amazon RDS).<br>- Perform resource clean-up. | 10/05/2026 | Hands-on experience on the AWS Management Console |
+| 10/05/2026 | Experience Amazon Bedrock Playground. Test generating a text prompt with the Nova Pro model. | 10/05/2026 | Encountered a token limit error (ThrottlingException) but the system still recorded the task as completed |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 1 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+**Week 1 Achievements:**
+* Familiarized with the basic AWS Management Console interface by watching the first tutorial videos.
+* Successfully received $200 AWS practice credits after completing 5 foundational tasks.
+* Strictly configured cost management with AWS Budgets, ready for upcoming lab practices without worrying about unexpected charges.
+* Experienced the practical process of provisioning and safely cleaning up basic services: EC2, Lambda, and RDS.
+* Understood the concept of resource limits (Service Quotas / Token Limits) when using AI services on a Free Tier account.
+* Successfully updated the Week 1 Worklog report structure on the GitHub platform.
