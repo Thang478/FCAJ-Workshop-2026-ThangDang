@@ -16,8 +16,8 @@ pre: "<b> 1.1. </b>"
 | Ngày bắt đầu | Công việc | Ngày hoàn thành | Ghi chú |
 | :--- | :--- | :--- | :--- |
 | 05/05/2026 | Đọc nội quy, quy định dự án và thiết lập kho lưu trữ GitHub cá nhân (Fork báo cáo). | 05/05/2026 | FCAJ Rule and Requirement |
-| 06/05/2026 | Tìm hiểu tổng quan AWS là gì thông qua 1-2 video hướng dẫn đầu tiên trên YouTube (Playlist 2025). | 06/05/2026 | Nắm bắt giao diện và khái niệm Cloud cơ bản |
-| 08/05/2026 | Đăng ký thành công tài khoản AWS Free Tier và thiết lập các thông tin ban đầu. | 08/05/2026 | Hoàn tất tạo tài khoản thực hành |
+| 06/05/2026 | Tìm hiểu tổng quan AWS là gì thông qua 1-2 video hướng dẫn đầu tiên trên YouTube (Playlist 2025). | 07/05/2026 | Nắm bắt giao diện và khái niệm Cloud cơ bản |
+| 08/05/2026 | Đăng ký thành công tài khoản AWS Free Tier và thiết lập các thông tin ban đầu. | 09/05/2026 | Hoàn tất tạo tài khoản thực hành |
 | 10/05/2026 | Cấu hình AWS Budgets để quản lý ngân sách. Thiết lập cảnh báo thanh toán để đảm bảo an toàn chi phí. | 10/05/2026 | Các ngưỡng cảnh báo: 12.5%, 25%, 50%, 75% |
 | 10/05/2026 | Thực hành 5 nhiệm vụ để lấy $200 credit: <br>- Khởi chạy máy chủ EC2.<br>- Tạo ứng dụng web serverless (AWS Lambda).<br>- Tạo cơ sở dữ liệu (Amazon RDS).<br>- Thực hiện dọn dẹp tài nguyên (Clean-up). | 10/05/2026 | Trải nghiệm trực tiếp trên AWS Management Console |
 | 10/05/2026 | Trải nghiệm Amazon Bedrock Playground. Chạy thử prompt sinh văn bản với model Nova Pro. | 10/05/2026 | Gặp lỗi giới hạn token (ThrottlingException) nhưng vẫn được hệ thống ghi nhận hoàn thành nhiệm vụ |
