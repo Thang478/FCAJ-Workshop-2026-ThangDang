@@ -6,32 +6,32 @@ chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-### Mục tiêu Tuần 2 (Week 2 Objectives)
+### Week 2 Objectives
 
-* **Lý thuyết:** Tiếp cận kiến thức nền tảng vững chắc về mạng trong điện toán đám mây thông qua dịch vụ Amazon Virtual Private Cloud (VPC).
-* **Thực hành:** Triển khai thực tế mô hình kết nối bảo mật AWS Site-to-Site VPN, kết nối an toàn giữa hai vùng mạng độc lập.
-* **Kỹ năng nâng cao:** Rèn luyện tư duy phân tích log và xử lý sự cố (Troubleshooting) hệ thống mạng thực tế trên hệ điều hành đời mới.
+* **Theory:** Acquire a solid foundational understanding of cloud networking concepts utilizing Amazon Virtual Private Cloud (VPC).
+* **Hands-on Practice:** Implement a real-world AWS Site-to-Site VPN architecture to securely bridge two isolated network environments.
+* **Advanced Skills:** Develop a strong mindset for log analysis and infrastructure troubleshooting on modern cloud operating systems.
 
 ---
 
-### Các công việc đã thực hiện (Tasks Carried Out)
+### Tasks Carried Out
 
-| Giai đoạn | Nội dung chi tiết công việc thực hiện | Trạng thái | Tư liệu tham khảo |
+| Phase | Detailed Tasks Performed | Status | Reference Material |
 | :--- | :--- | :--- | :--- |
-| **Nghiên cứu & Học tập** | - Xem chuỗi video hướng dẫn AWS (2025 - 2026) từ cơ bản đến phần VPC Lab 2-1.<br>- Nghiên cứu lý thuyết cốt lõi: Subnets, Route Tables, Internet Gateway (IGW), NAT Gateway, Security Groups (SG), và Network ACLs (NACLs). | **Hoàn thành** | AWS Study Group - Blog / Youtube |
-| **Thực hành Căn bản** | - Thực hiện bài Lab: **Kiến thức cơ bản về mạng với Amazon Virtual Private Cloud (VPC)**.<br>- Tự tay cấu hình phân đoạn mạng đa tầng (Public Subnet cho máy chủ ngoại mạng, Private Subnet cho cơ sở dữ liệu nội bộ). | **Hoàn thành** | AWS Study Group - Workshop |
-| **Thực hành Nâng cao** | - Triển khai kiến trúc **AWS Site-to-Site VPN** kết nối mạng Main office (VPC ASG) và Branch office (VPC ASG VPN).<br>- Khởi tạo Virtual Private Gateway (VGW), Customer Gateway (CGW) và thiết lập cấu hình định tuyến Static Routing. | **Hoàn thành** | AWS Study Group - Workshop |
-| **Xử lý sự cố (Troubleshooting)** | - Di cư cấu hình từ OpenSwan cũ sang **Libreswan** để tương thích với hệ điều hành **Amazon Linux 2023**.<br>- Tiến hành fix liên hoàn lỗi cú pháp file cấu hình, lỗi thụt lề, lỗi ký tự ẩn Windows (`CRLF`) bằng công cụ `dos2unix`. | **Hoàn thành** | AWS Health / Kỹ sư hỗ trợ |
-| **Dọn dẹp & Tối ưu** | - Thực hiện quy trình phá hủy và giải phóng tài nguyên (Resource Clean-up) nghiêm ngặt để tránh phát sinh chi phí ngầm (Terminate EC2, Release Elastic IP, Delete NAT Gateway, Clear CloudWatch Flow Logs & Reachability Analyzer). | **Hoàn thành** | AWS Console |
+| **Research & Learning** | - Reviewed AWS tutorial video series (2025 - 2026) from scratch up to VPC Lab 2-1.<br>- Studied core concepts: Subnets, Route Tables, Internet Gateways (IGW), NAT Gateways, Security Groups (SG), and Network ACLs (NACLs). | **Completed** | AWS Study Group - Blog / YouTube |
+| **Basic Practice** | - Conducted the workshop: **AWS Networking Fundamentals**.<br>- Manually configured multi-tier network segmentation (Public Subnet for public-facing servers, Private Subnet for internal databases). | **Completed** | AWS Study Group - Workshop |
+| **Advanced Practice** | - Deployed an **AWS Site-to-Site VPN** architecture connecting Main Office (VPC ASG) and Branch Office (VPC ASG VPN).<br>- Initialized Virtual Private Gateway (VGW), Customer Gateway (CGW), and configured Static Routing. | **Completed** | AWS Study Group - Workshop |
+| **Troubleshooting** | - Migrated configuration from legacy OpenSwan to **Libreswan** to ensure compatibility with **Amazon Linux 2023**.<br>- Debugged sequential syntax errors, indentation issues, and hidden Windows CRLF characters using the `dos2unix` utility. | **Completed** | AWS Health / Support Engineer |
+| **Cleanup & Optimization** | - Executed a strict resource decommissioning process to eliminate hidden charges (Terminated EC2 instances, released Elastic IPs, deleted NAT Gateways, cleared CloudWatch Flow Logs & Reachability Analyzer paths). | **Completed** | AWS Console |
 
 ---
 
-### Kết quả đạt được (Week 2 Achievements)
+### Week 2 Achievements
 
-* **Xây dựng hệ thống mạng hoàn chỉnh:** Làm chủ giao diện và cách thức liên kết các thành phần mạng trong VPC. Hiểu rõ cơ chế hoạt động phối hợp giữa Tường lửa cấp Subnet (NACL - Stateless) và Tường lửa cấp Instance (Security Group - Stateful).
-* **Đào thông đường hầm VPN:** Vượt qua chốt chặn cấu hình phức tạp để đưa trạng thái hệ thống từ `Loaded 0` lên **`Total IPsec connections: loaded 2`**. 
-* **Kết nối nội bộ thành công:** Thực hiện lệnh `ping` kiểm tra gói tin chạy thông suốt giữa máy chủ Private và Customer Gateway bằng IP nội bộ thông qua đường hầm mã hóa IPsec bảo mật.
-* **Xử lý sự cố thực tế:** Thành thạo các câu lệnh quản trị mạng nâng cao trên Linux để kiểm tra và ép hệ thống nạp cấu hình như:
+* **Robust Network Infrastructure Construction:** Mastered the VPC management console and structural dependencies. Deeply understood the cooperative defense-in-depth mechanics between Subnet-level firewalls (NACL - Stateless) and Instance-level firewalls (Security Group - Stateful).
+* **Successful VPN Tunnel Establishment:** Successfully resolved persistent syntax issues, shifting the system state from `Loaded 0` to **`Total IPsec connections: loaded 2`**.
+* **Internal Connectivity Verified:** Confirmed secure end-to-end communication by successfully executing `ping` commands between the Private EC2 instance and the Customer Gateway using internal IPs over the encrypted IPsec tunnel.
+* **Real-World Troubleshooting Expertise:** Acquired hands-on proficiency with advanced Linux networking commands to inspect and force-load configuration files:
   ```bash
   sudo systemctl status ipsec
   sudo ipsec status
