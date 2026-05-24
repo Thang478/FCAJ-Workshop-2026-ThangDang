@@ -1,18 +1,16 @@
 ---
 title: "Nhật ký công việc"
-date: 2024-01-01
+date: 2026-05-04
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-
-
 **Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
 
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+**Tuần 2:** [Kiến trúc Amazon VPC, Bảo mật mạng và Triển khai AWS Site-to-Site VPN](1.2-week2/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 3:** [Lý thuyết Compute VM, Sao lưu tự động với AWS Backup, Định tuyến mạng với AWS Transit Gateway và Lên kế hoạch dự án](1.3-week3/)
 
 **Tuần 4:** [Làm công việc C...](1.4-week4/)
 
