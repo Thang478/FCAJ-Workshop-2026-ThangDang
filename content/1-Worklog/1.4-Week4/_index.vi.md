@@ -1,59 +1,30 @@
 ---
-title: "Worklog Tuần 4"
-date: 2024-01-01
+title: "Nhật ký công việc Tuần 4"
+date: 2026-05-31
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
-### Mục tiêu tuần 4:
+### Mục tiêu Tuần 4:
+* Nắm vững các cơ chế bảo mật cốt lõi và tối ưu hóa luồng dữ liệu cho kho lưu trữ Amazon S3, chuẩn bị nền tảng lưu trữ an toàn cho đồ án.
+* Hiểu rõ cơ chế đóng gói ứng dụng (Containerization) với Docker thông qua việc thực hành triển khai cục bộ (Local), vượt qua giới hạn dung lượng môi trường.
+* Tái cấu trúc và phát triển nâng cao đồ án "Serverless Malware Scanner": Triển khai Web App cục bộ, mở rộng mô hình phân tích tài liệu (Document Model) và xây dựng nền tảng MLOps thu nhỏ.
+* Hệ thống hóa toàn bộ các mô hình học máy (PE & Document) thành một container độc lập làm phương án dự phòng.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 2 | - Hoàn thành chuỗi video lý thuyết (103 - 109) củng cố kiến thức thiết kế hệ thống AWS.<br>- Nghiên cứu lý thuyết về kiến trúc Containerization, hình dung sự khác biệt giữa cấu trúc máy chủ ảo truyền thống và Container. | 25/05/2026 | 25/05/2026 | AWS Video Series |
+| 3 | - Thực hành cấu hình bảo mật chuyên sâu cho Amazon S3 (Lab: S3 Security Best Practices).<br>- Thiết lập S3 Bucket Policy ép buộc mã hóa dữ liệu (SSE-S3) và giao thức HTTPS.<br>- Kích hoạt Block Public Access (BPA) để ngăn chặn truy cập dữ liệu trái phép. | 26/05/2026 | 26/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Tích hợp S3 VPC Endpoint để định tuyến truy cập nội bộ (private network) an toàn và tối ưu.<br>- Hoàn tất cài đặt Docker Desktop trên môi trường phát triển cục bộ (Local). | 27/05/2026 | 27/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Thực hành Lab: Đóng gói ứng dụng web với Docker.<br>- Xây dựng kịch bản `Dockerfile`, thực thi quy trình đóng gói (`docker build`) và khởi chạy (`docker run`) trực tiếp trên Local để tối ưu chi phí.<br>- Đăng nhập và đẩy (push) thành công Docker Image lên kho lưu trữ đám mây Docker Hub. | 28/05/2026 | 28/05/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - Quay lại phát triển đồ án nhóm: Xây dựng hoàn thiện Document Model hỗ trợ xử lý Word, Excel, PDF, HTML.<br>- Triển khai thành công tính năng tải lên hàng loạt (Batch Upload) đa luồng trên giao diện Web App.<br>- Đóng gói thành công PE Model (XGBoost, 2568 features, tích hợp SHAP/Defender) thành một Docker Container độc lập chạy ổn định trên Local. | 29/05/2026 | 29/05/2026 | Đồ án nhóm |
+| 7 | - Phát triển tính năng MLOps (Continuous Training): Thiết lập hệ thống tự động đối chiếu dự đoán của Document Model với API VirusTotal.<br>- Tự động trích xuất các file bị dự đoán sai vào cơ sở dữ liệu SQLite cục bộ (Data Collection).<br>- Lập trình kịch bản tự động huấn luyện (Auto-train) khi dữ liệu đạt ngưỡng, kèm tính năng A/B Testing, quản lý vòng đời mô hình (Model Registry) và sao lưu dự phòng. | 30/05/2026 | 31/05/2026 | Đồ án nhóm |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Thành tựu Tuần 4:
+* **Tư duy Bảo mật Đám mây (S3):** Hiểu rõ cách triển khai mô hình bảo mật nhiều lớp cho kho lưu trữ dữ liệu thông qua cơ chế Policy, mã hóa và định tuyến nội bộ.
+* **Kiến trúc Container (Docker):** Nắm bắt thành thạo quy trình tự động hóa môi trường triển khai bằng Docker, sẵn sàng khắc phục các rào cản về dung lượng khi đưa dự án lên hạ tầng đám mây.
+* **Kiến trúc ML & Pipeline Dữ liệu:** Hoàn thiện vòng lặp MLOps thu nhỏ từ khâu thu thập dữ liệu tự động, đánh giá chéo qua Ground Truth (VirusTotal), đến khả năng kích hoạt tái huấn luyện (Retrain) thông minh.
+* **Dự phòng rủi ro:** Đóng gói thành công toàn bộ hệ thống PE và Document Models thành phiên bản Container cục bộ, bảo đảm tính liên tục và sẵn sàng triển khai của dự án.
