@@ -12,9 +12,9 @@ pre: " <b> 1. </b> "
 
 **Tuần 3:** [Lý thuyết Compute VM, Sao lưu tự động với AWS Backup, Định tuyến mạng với AWS Transit Gateway và Lên kế hoạch dự án](1.3-week3/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 4:** [Bảo mật Amazon S3, Đóng gói ứng dụng với Docker và Phát triển pipeline MLOps](1.4-week4/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 5:** [Kiến trúc Serverless với Lambda, S3, DynamoDB, API Gateway và Container hóa Web App](1.5-week5/)
 
 **Tuần 6:** [Làm công việc E...](1.6-week6/)
 

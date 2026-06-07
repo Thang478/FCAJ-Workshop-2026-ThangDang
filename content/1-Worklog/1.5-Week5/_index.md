@@ -1,57 +1,32 @@
 ---
-title: "Week 5 Worklog"
-date: 2024-01-01
+title: "Worklog Week 5"
+date: 2026-06-07
 weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 5 Objectives:
+* Master the design mindset of Event-Driven Architecture on AWS.
+* Build a fully automated Serverless Backend system using Amazon S3, AWS Lambda, and Amazon DynamoDB.
+* Configure API Gateway as a secure interface between the Web Application and cloud services.
+* Integrate project modules into a unified Web Application, package with Docker, and perform comprehensive testing in a containerized environment.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Weekly Implementation Log:
+| Day | Task | Start Date | End Date | References |
+| --- | --- | --- | --- | --- |
+| Mon | - Researched Event-Driven Architecture through video tutorials: *Module 07-Lab39-8 - LEDA*. <br>- Understood asynchronous trigger mechanisms between services. | 01/06/2026 | 01/06/2026 | AWS Video Series |
+| Tue | - Completed Lab: *Serverless Backend with Lambda, S3, and DynamoDB*.<br>- Configured S3 Event Notifications to automatically trigger Lambda for file processing. | 02/06/2026 | 02/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| Wed | - Completed Lab: *Building Serverless APIs*.<br>- Initialized REST API on Amazon API Gateway, defined Resources and Methods (POST, GET, DELETE). | 03/06/2026 | 03/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| Thu | - Configured Lambda Proxy Integration and CORS to enable Web App-to-Backend communication.<br>- Verified API flow using Postman (HTTP 200 OK). | 04/06/2026 | 04/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| Fri | - Group Project: Integrated PE and Document analysis modules into a unified Web Application interface.<br>- Implemented communication flow between Frontend and Backend via API Gateway. | 05/06/2026 | 06/06/2026 | Team Project |
+| Sat | - Containerized the entire Web Application using Docker.<br>- Performed container building, connection debugging, and stability testing in an isolated environment. | 07/06/2026 | 07/06/2026 | Team Project |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Weekly Achievements:
+* **Serverless Backend Architecture:** Successfully mastered the automated data flow from S3 trigger to Lambda processing and DynamoDB storage, gaining deep insight into serverless operations. 
 
+[Image of AWS Serverless architecture]
 
-### Week 5 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **API Gateway Connectivity:** Established a secure public API interface, gaining proficiency in Proxy Integration, CORS handling, and API Stage deployment.
+* **Container Operations (Docker):** Successfully packaged a complex multi-page Web App into a Docker environment, ensuring environment consistency between development and testing.
+* **System Integration:** Solidified the core architectural framework of the project, ready for real-world integration with the AWS cloud infrastructure in the coming week.

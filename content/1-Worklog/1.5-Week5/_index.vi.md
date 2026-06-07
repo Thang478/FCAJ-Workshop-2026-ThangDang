@@ -1,59 +1,32 @@
 ---
-title: "Worklog Tuần 5"
-date: 2024-01-01
+title: "Nhật ký công việc Tuần 5"
+date: 2026-06-07
 weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 5:
+* Nắm vững tư duy thiết kế Kiến trúc hướng sự kiện (Event-Driven Architecture) trên hạ tầng AWS.
+* Xây dựng hệ thống Serverless Backend tự động hóa hoàn toàn với Amazon S3, AWS Lambda và Amazon DynamoDB.
+* Thiết lập cổng kết nối API Gateway để giao tiếp an toàn giữa Web App và các dịch vụ đám mây.
+* Tích hợp các phân hệ đồ án vào ứng dụng Web thống nhất, đóng gói Docker và thực hiện kiểm thử trên môi trường Container cục bộ.
 
-### Mục tiêu tuần 5:
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 2 | - Nghiên cứu kiến trúc hướng sự kiện (Event-Driven Architecture) thông qua video bài giảng: *Module 07-Lab39-8 - LEDA*. <br>- Hiểu cơ chế trigger bất đồng bộ giữa các dịch vụ. | 01/06/2026 | 01/06/2026 | AWS Video Series |
+| 3 | - Thực hành Lab: *Serverless Backend with Lambda, S3, and DynamoDB*.<br>- Cấu hình S3 Event Notifications để tự động trigger Lambda xử lý file. | 02/06/2026 | 02/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4 | - Thực hành Lab: *Building Serverless APIs*.<br>- Khởi tạo REST API trên Amazon API Gateway, định nghĩa các Resource và Method (POST, GET, DELETE). | 03/06/2026 | 03/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5 | - Cấu hình Lambda Proxy Integration và CORS để cho phép Web App tương tác với Backend.<br>- Kiểm thử luồng API thành công qua Postman (HTTP 200 OK). | 04/06/2026 | 04/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6 | - Đồ án nhóm: Hợp nhất các module phân tích PE và Document vào một giao diện Web App duy nhất.<br>- Triển khai luồng giao tiếp giữa Frontend và Backend thông qua API Gateway. | 05/06/2026 | 06/06/2026 | Đồ án nhóm |
+| 7 | - Container hóa toàn bộ hệ thống Web App bằng Docker.<br>- Tiến hành build container, gỡ lỗi kết nối và kiểm thử tính ổn định trong môi trường cô lập. | 07/06/2026 | 07/06/2026 | Đồ án nhóm |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Thành tựu Tuần 5:
+* **Kiến trúc Serverless (Backend):** Làm chủ luồng dữ liệu tự động từ S3 trigger Lambda ghi log vào DynamoDB, hiểu rõ cơ chế vận hành không máy chủ. 
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+[Image of AWS Serverless architecture]
 
-
-### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Cổng giao tiếp API (API Gateway):** Thiết lập hệ thống API công khai, nắm vững kỹ thuật về Proxy Integration, xử lý CORS và triển khai phiên bản (Deploy API Stage).
+* **Vận hành Container (Docker):** Đóng gói thành công ứng dụng Web App phức tạp vào môi trường Docker, đảm bảo tính nhất quán giữa môi trường phát triển và kiểm thử.
+* **Hệ thống hóa đồ án:** Định hình khung cấu trúc của Web App, sẵn sàng cho giai đoạn kết nối thực tế với hạ tầng AWS trong tuần tới.

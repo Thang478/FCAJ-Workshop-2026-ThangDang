@@ -12,9 +12,9 @@ pre: " <b> 1. </b> "
 
 **Week 3:** [Compute VM Theory, Automated Data Protection with AWS Backup, Scalable Networking with AWS Transit Gateway, and Project Planning](1.3-week3/)
 
-**Week 4:** [Doing task C...](1.4-week4/)
+**Week 4:** [S3 Security Best Practices, Docker Containerization, and MLOps Pipeline Development](1.4-week4/)
 
-**Week 5:** [Doing task D...](1.5-week5/)
+**Week 5:** [Serverless Architecture with Lambda, S3, DynamoDB, API Gateway, and Full-Stack App Containerization](1.5-week5/)
 
 **Week 6:** [Doing task E...](1.6-week6/)
 
