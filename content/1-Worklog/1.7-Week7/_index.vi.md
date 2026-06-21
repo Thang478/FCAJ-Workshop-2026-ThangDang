@@ -1,59 +1,29 @@
 ---
-title: "Worklog Tuần 7"
-date: 2024-01-01
+title: "Nhật ký công việc Tuần 7"
+date: 2026-06-21
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 7:
+* Triển khai hệ thống xác thực người dùng an toàn thông qua Amazon Cognito (User Pools & Identity Pools).
+* Làm chủ kỹ năng giám sát hệ thống Serverless bằng Amazon CloudWatch và phân tích hiệu năng/điểm nghẽn bằng AWS X-Ray.
+* Chuẩn hóa các chính sách phân quyền IAM cho môi trường Docker MLOps.
+* Hoàn thiện sơ đồ kiến trúc hệ thống (Architecture Diagram) cho nền tảng SOC Malware.
 
-### Mục tiêu tuần 7:
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 2 | - Nghiên cứu lý thuyết quản lý định danh: Phân tích luồng JWT Token, cấu hình User Pool và cơ chế xác thực OAuth 2.0. | 15/06/2026 | 15/06/2026 | AWS Documentation |
+| 3 | - Thực hành Lab: *Xác thực người dùng với Amazon Cognito*.<br>- Khởi tạo User Pool, thiết lập chính sách mật khẩu mạnh và ánh xạ credential API (`ClientID`, `ClientSecret`). | 16/06/2026 | 16/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| 4 | - Thực hành Lab: *Giám sát ứng dụng Serverless (CloudWatch & X-Ray)*.<br>- Cấu hình log cho Lambda, tạo Custom Metrics và thiết lập CloudWatch Alarms tích hợp SNS để cảnh báo lỗi. | 17/06/2026 | 17/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| 5 | - Thực hành Lab: *AWS X-Ray*.<br>- Tích hợp thư viện `aws_xray_sdk` vào Lambda, thiết lập Service Map và phân tích các điểm nghẽn độ trễ khi thực thi hàm. | 18/06/2026 | 18/06/2026 | [AWS Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
+| 6 | - Đồ án nhóm: Thắt chặt chính sách phân quyền IAM. Tối ưu hóa các chính sách theo nguyên tắc đặc quyền tối thiểu cho Docker containers. | 19/06/2026 | 20/06/2026 | Đồ án nhóm |
+| 7 | - Đồ án nhóm: Thiết kế kiến trúc. Liên tục tinh chỉnh sơ đồ kiến trúc hệ thống trên Draw.io để đạt chuẩn hóa thiết kế đám mây. | 21/06/2026 | 21/06/2026 | Đồ án nhóm |
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 7:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Thành tựu Tuần 7:
+* **Quản lý Định danh (Amazon Cognito):** Xây dựng thành công luồng xác thực an toàn, bảo vệ các API endpoint và quản lý phiên người dùng hiệu quả.
+* **Giám sát & Gỡ lỗi Serverless:** Có khả năng thực hiện phân tích nguyên nhân gốc rễ (Root-cause analysis) trong hệ thống phân tán. Thành thạo việc tạo cảnh báo tự động qua Email (SNS) và sử dụng X-Ray Service Map để phát hiện các điểm nghẽn hiệu năng.
+* **Thiết kế Kiến trúc:** Xây dựng bản đồ luồng dữ liệu phức tạp cho nền tảng SOC, đảm bảo kiến trúc có khả năng mở rộng và bảo mật cao trước khi triển khai trên Cloud.
+* **Bảo mật DevOps:** Cấu trúc lại các IAM Roles và chính sách bảo mật, đảm bảo nền tảng MLOps dựa trên Docker hoạt động đúng nguyên tắc đặc quyền tối thiểu (Least Privilege).
