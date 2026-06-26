@@ -1,14 +1,12 @@
 ---
 title: "Các events đã tham gia"
-date: 2026-06-06
+date: 2026-06-26
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-
-
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là những khoảnh khắc rất tuyệt vời.
 
 ### [Event 1](4.1-Event1/)
 
@@ -20,19 +18,21 @@ Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là
 
 &emsp;**Vai trò trong sự kiện:** Người tham dự
 
-&emsp;**Mô tả:** Sự kiện chia sẻ về gốc nhìn các xu hướng Cloud Native trên AWS, bao gồm kiến trúc Multiplayer Game, Containerization với Docker, ứng dụng AI/ML (GraphRAG, NIDS) và kinh nghiệm vận hành hệ thống thực chiến và ứng tuyển phỏng vấn.
+&emsp;**Mô tả:** Sự kiện chia sẻ về góc nhìn các xu hướng Cloud Native trên AWS, bao gồm kiến trúc Multiplayer Game, Containerization với Docker, ứng dụng AI/ML (GraphRAG, NIDS) và kinh nghiệm vận hành hệ thống thực chiến và ứng tuyển phỏng vấn.
 
 &emsp;**Kết quả/Giá trị:** Nâng cao tư duy thiết kế hệ thống, hiểu rõ lộ trình phát triển kỹ năng Cloud/AI và học hỏi kinh nghiệm vận hành hệ thống từ các chuyên gia.
 
 
-
-
 ### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+&emsp;**Tên sự kiện:** AWS Student Builder Group: Build Voice Agents at Scale
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+&emsp;**Thời gian:** 20:00 ngày 30/05/2026
+
+&emsp;**Địa điểm:** Trực tuyến (Google Meet)
 
 &emsp;**Vai trò trong sự kiện:** Người tham dự 
 
+&emsp;**Mô tả:** Buổi chia sẻ chuyên sâu về việc sử dụng Amazon Bedrock AgentCore và các dịch vụ Serverless để xây dựng các ứng dụng AI Voice Agent tạo sinh (Generative AI) có khả năng mở rộng cao trên nền tảng AWS.
+
+&emsp;**Kết quả/Giá trị:** Nắm vững kiến trúc và luồng dữ liệu của AI đàm thoại thời gian thực, hiểu cách giải quyết bài toán độ trễ (latency), đồng thời định hướng được cách tích hợp AI vào quy trình phân tích và vận hành bảo mật (SOC).

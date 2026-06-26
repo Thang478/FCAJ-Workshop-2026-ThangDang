@@ -1,35 +1,38 @@
 ---
 title: "Events Participated"
-date: 2026-06-06
+date: 2026-06-26
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
+During my internship, I participated in 2 events. Each event was a memorable experience, providing new, interesting, and useful knowledge, along with wonderful moments.
 
+### [Event 1](4.1-Event1/)
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
-
-### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:** AWS First Cloud Journey / Community Day
 
-&emsp;**Time:** 09:00 AM, June 6, 2026
+&emsp;**Date & Time:** 09:00 AM, June 06, 2026
 
-&emsp;**Location:** 26th Floor, Bitexco Financial Tower, Ho Chi Minh City
+&emsp;**Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, Ho Chi Minh City
 
 &emsp;**Role:** Attendee
 
-&emsp;**Description:** Focused on Cloud Native trends on AWS (Multiplayer Game architecture, Docker Containerization, AI/ML applications like GraphRAG, NIDS) and practical career/operational insights.
+&emsp;**Description:** A sharing session on Cloud Native trends on AWS, including Multiplayer Game architecture, Containerization with Docker, AI/ML applications (GraphRAG, NIDS), and practical experience in system operations and job interviews.
 
-&emsp;**Outcome:** Enhanced system design thinking, clarified Cloud/AI skill roadmap, and gained operational
+&emsp;**Result/Value:** Enhanced system design mindset, understood the roadmap for Cloud/AI skill development, and learned practical system operation experiences from industry experts.
 
----
 
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+### [Event 2](4.2-Event2/)
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Event Name:** AWS Student Builder Group: Build Voice Agents at Scale
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Date & Time:** 08:00 PM, May 30, 2026
 
-&emsp;**Role:** Attendee  
+&emsp;**Location:** Online (Google Meet)
+
+&emsp;**Role:** Attendee
+
+&emsp;**Description:** An in-depth sharing session on using Amazon Bedrock AgentCore and Serverless services to build highly scalable generative AI Voice Agent applications on AWS.
+
+&emsp;**Result/Value:** Mastered the architecture and data flow of real-time conversational AI, understood how to address latency issues, and gained direction on integrating AI into security analysis and operations workflows (SOC).

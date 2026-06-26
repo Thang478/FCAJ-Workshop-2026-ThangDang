@@ -1,125 +1,69 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-05-30
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo tổng kết: “AWS Student Builder Group: Build Voice Agents at Scale”
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Mục tiêu sự kiện
+* Hiểu về kiến trúc của các AI Voice Agents trên nền tảng đám mây.
+* Tìm hiểu cách sử dụng Amazon Bedrock AgentCore cho các tính năng AI tạo sinh (Generative AI).
+* Khám phá các thực tiễn tốt nhất (best practices) để triển khai và mở rộng quy mô ứng dụng AI đàm thoại trên AWS.
+* Thảo luận về các case study thực tế khi tích hợp AI vào quy trình làm việc tự động hóa.
 
-### Mục Đích Của Sự Kiện
+### Diễn giả & Điều phối
+* **Kiệt Trần** – AI Developer / Diễn giả khách mời
+* **Danh Hoàng Hiếu Nghị** – Điều phối (Host) / AWS Student Builder Group tại HUFLIT
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+---
 
-### Danh Sách Diễn Giả
+### Nội dung nổi bật
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+#### 1. Giới thiệu về Amazon Bedrock AgentCore
+* **Tính năng:** Cách Bedrock AgentCore đơn giản hóa việc tạo các ứng dụng AI bằng cách tự động quản lý các lệnh gọi API, cửa sổ ngữ cảnh (context windows) và lịch sử trò chuyện.
+* **Foundation Models:** Tiêu chí lựa chọn các mô hình ngôn ngữ lớn (LLMs) phù hợp cho các luồng công việc chuyển đổi giọng nói thành văn bản (voice-to-text) và văn bản thành giọng nói (text-to-voice).
 
-### Nội Dung Nổi Bật
+#### 2. Thiết kế kiến trúc Voice Agent
+* **Luồng dữ liệu (Data Flow):** Quá trình thu thập đầu vào giọng nói, chuyển biên, xử lý ý định (intent) bằng LLM và tổng hợp giọng nói đầu ra.
+* **Tích hợp Serverless:** Sử dụng AWS Lambda và API Gateway để tạo ra các tương tác phản hồi nhanh, độ trễ thấp cho Voice Agent.
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### 3. Mở rộng quy mô và Thực tiễn vận hành
+* **Hiệu suất:** Chiến lược xử lý các yêu cầu đồng thời cao (high-concurrency) và tối ưu hóa độ trễ trong xử lý giọng nói theo thời gian thực.
+* **Bảo mật:** Cách bảo mật prompt, quản lý quyền IAM cho Bedrock và đảm bảo quyền riêng tư dữ liệu trong môi trường đám mây.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+---
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+### Bài học rút ra
+* **Tư duy AI:** Chuyển đổi từ các chatbot dựa trên quy tắc (rule-based) truyền thống sang các AI agent có khả năng nhận thức ngữ cảnh động nhờ Foundation Models.
+* **Kiến trúc:** Nắm vững sự tích hợp giữa các dịch vụ AI (Amazon Bedrock) và điện toán Serverless (Lambda) để xây dựng các giải pháp có khả năng mở rộng cao.
+* **Hiệu quả:** Tận dụng các dịch vụ được quản lý (managed services) cho phép builder tập trung vào logic nghiệp vụ và "tính cách" của agent thay vì phải lo lắng về hạ tầng bên dưới.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### Ứng dụng vào công việc
+* **Tích hợp AI:** Khám phá việc áp dụng Bedrock và AI tạo sinh vào quy trình phân tích mối đe dọa hoặc SOC (ví dụ: sử dụng AI agent để tóm tắt log bảo mật và điều tra hành vi mã độc).
+* **Điện toán Serverless:** Đưa vào quy chuẩn việc sử dụng AWS Lambda để kích hoạt các tác vụ tự động, hướng sự kiện (event-driven).
+* **Đổi mới:** Thử nghiệm phát triển các công cụ nội bộ sử dụng AI agent nhằm tăng tốc độ truy xuất thông tin và truy vấn hệ thống trên môi trường đám mây.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+---
 
-#### Domain-Driven Design (DDD)
+### Trải nghiệm sự kiện
+Sự kiện đã cung cấp một cái nhìn sâu sắc và thực tế về lĩnh vực Generative AI đang phát triển nhanh chóng trên AWS.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+**Học hỏi từ các chuyên gia trong ngành**
+* Diễn giả đã chia sẻ các **thực tiễn tốt nhất** trong việc xây dựng và mở rộng AI agent, giúp các khái niệm phức tạp về Bedrock trở nên vô cùng dễ hiểu.
+* Các bản demo thực tế đã làm rõ cách các foundation models tương tác với các API bên ngoài để thực thi các tác vụ tự động.
 
-#### Event-Driven Architecture
+**Tiếp cận kỹ thuật thực tiễn**
+* Hình dung rõ ràng **luồng dữ liệu** của các hệ thống AI đàm thoại theo thời gian thực.
+* Thu được kiến thức về cách vượt qua các thách thức về độ trễ và quản lý trạng thái (state-management) trong các ứng dụng dựa trên giọng nói.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+**Kết nối và thảo luận**
+* Phần Q&A đã làm nổi bật những cạm bẫy phổ biến mà các developer thường gặp khi bắt đầu làm việc với Generative AI.
+* Việc tương tác với cộng đồng HUFLIT Builder đã mang lại động lực và những góc nhìn mới mẻ về công nghệ đám mây.
 
-#### Compute Evolution
+#### Hình ảnh sự kiện
+![Hình ảnh sự kiện](image-1.png)
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
-
-### Những Gì Học Được
-
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+> **Đánh giá chung:** Sự kiện đã kết nối thành công khoảng cách giữa lý thuyết AI và kỹ thuật đám mây thực tế, trang bị cho tôi kiến thức nền tảng để bắt đầu tích hợp Amazon Bedrock vào các dự án vận hành và bảo mật trong tương lai.
