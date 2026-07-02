@@ -1,57 +1,28 @@
 ---
-title: "Week 8 Worklog"
-date: 2024-01-01
+title: "Worklog Week 8"
+date: 2026-06-28
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
+* Comprehensive integration of core modules (PE Scanner, Document Scanner, URL Scanner) into a unified project structure.
+* Package the application into an isolated environment using Docker and Docker Compose.
+* Completely resolve dependency conflicts arising from merging Machine Learning and Deep Learning models into the same environment.
+* Refactor the application architecture from Monolithic to Multi-container to ensure system stability.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks Completed This Week:
+| Day | Task | Start Date | Completion Date | References |
+| --- | --- | --- | --- | --- |
+| 2 | - **Source Code Integration:** Merged the two core modules of the project, PE Scanner (XGBoost) and URL Phishing Scanner (TensorFlow), into a single project directory. | 22/06/2026 | 22/06/2026 | Internal source code |
+| 3 | - **Local Testing & Writing Dockerfile:** Initialized the `Dockerfile` and `docker-compose.yml` to package the entire monolithic system. Mapped volumes and exposed port 8501. | 23/06/2026 | 23/06/2026 | Docker Documentation |
+| 4 | - **Critical Error Detection:** When running `docker compose build`, the system crashed due to a `numpy` version conflict between TensorFlow and XGBoost/SHAP.<br>- The PE model failed to load the configuration metric (`base_score`). | 24/06/2026 | 24/06/2026 | StackOverflow / GitHub Issues |
+| 5 | - **Debugging:** Applied the "Pinning Version" strategy in `requirements.txt`.<br>- Experimented with switching to `tensorflow-cpu` to reduce Image size and mitigate RAM overflow risks on Docker. | 25/06/2026 | 25/06/2026 | TensorFlow Docs |
+| 6 | - **Architecture Modification:** Despite trying multiple methods, forcing 2 frameworks into the same memory space remained unstable. Decided to "tear down and rebuild," splitting the system into independent containers. | 26/06/2026 | 26/06/2026 | AWS Microservices Architecture |
+| 7 | - **Multi-Container Deployment:** Split the project into 2 parallel containers:<br>&emsp;+ *Container 1 (Port 8501):* Runs Streamlit containing the PE Scanner & Document Scanner.<br>&emsp;+ *Container 2 (Port 5000):* Runs a Flask API dedicated to processing the TensorFlow URL model. | 27/06/2026 | 28/06/2026 | Docker Compose Docs |
 
 ### Week 8 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Mastering Troubleshooting Process:** Enhanced skills in reading package manager (pip) error logs and analyzing the root cause of core dependency conflicts (Dependency Hell) between different AI platforms.
+* **System Design Mindset:** Instead of stubbornly patching errors on a patchwork Monolithic architecture, boldly adopted a distributed mindset. Separating the URL processing engine (TensorFlow) into an independent Backend API completely eliminated the `numpy` conflict.
+* **Successful Dockerization:** Completed the `docker-compose.yml` file, running 2 parallel services (Streamlit and Flask) that communicate smoothly via Docker's virtual internal network. The system is now ready for the Image push to Amazon ECR in the upcoming weeks.

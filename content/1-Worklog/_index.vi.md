@@ -16,11 +16,11 @@ pre: " <b> 1. </b> "
 
 **Tuần 5:** [Kiến trúc Serverless với Lambda, S3, DynamoDB, API Gateway và Container hóa Web App](1.5-week5/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 6:** [Bảo mật AWS KMS, Kiểm toán CloudTrail & Athena và Tối ưu hóa Web App MLOps](1.6-week6/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+**Tuần 7:** [Quản lý định danh Amazon Cognito, Giám sát Serverless và Thiết kế kiến trúc SOC](1.7-week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Tích hợp mã nguồn (PE & URL Scanner), Container hóa Docker và Tái cấu trúc Multi-container](1.8-week8/)
 
 **Tuần 9:** [Làm công việc I...](1.9-week9/)
 
