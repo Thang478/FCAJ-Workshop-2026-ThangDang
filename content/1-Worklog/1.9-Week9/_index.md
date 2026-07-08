@@ -1,57 +1,30 @@
 ---
 title: "Week 9 Worklog"
-date: 2024-01-01
+date: 2026-07-05
 weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
+* Develop the Authentication module and Role-Based Access Control (RBAC).
+* Configure Data Segregation to ensure absolute privacy for the scanning history and cache of each user.
+* Build an Admin Dashboard integrated with visual statistical charts.
+* Package, standardize technical documentation, and hand over the source code to the team responsible for Cloud infrastructure deployment.
+* Restructure and finalize the overall System Architecture Topology.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks Completed During the Week:
+| Day | Task | Start Date | End Date | References |
+| --- | --- | --- | --- | --- |
+| 2 | - **Auth Development & Data Segregation:** Coded the Register/Login functionalities. Established database routing logic to completely isolate the scanning history (URL, Document, PE files) and temporary cache of each user, ensuring users cannot view each other's data. | 29/06/2026 | 29/06/2026 | Web Authentication Best Practices, Data Isolation |
+| 3 | - **Admin Dashboard Implementation:** Designed a module specifically for Administrators. Added privileges allowing the Admin to view the overall data of the entire system and integrated visual charting libraries (Statistical Charts) to track usage traffic and malware analysis results. | 30/06/2026 | 30/06/2026 | Data Visualization, RBAC Models |
+| 4 | - **Bug Fixing & Security Optimization:** Detected and resolved logic bugs related to password validation and Password Hashing. Patched Session Leakage vulnerabilities when switching between User and Admin accounts. | 01/07/2026 | 01/07/2026 | OWASP Authentication Cheat Sheet |
+| 5 | - **Integration Testing on Docker:** Relaunched the Multi-container system using `docker-compose`. Executed multi-threaded login testing scenarios and cross-data queries to ensure the authorization mechanism operates stably without memory conflicts. | 02/07/2026 | 02/07/2026 | Docker Compose Workflow |
+| 6 | - **Source Code Packaging & Handover:** Standardized the directory structure and removed redundant configuration files. Handed over the clean, stable source code to the members responsible for pushing to AWS (ECR, ECS Fargate). | 03/07/2026 | 03/07/2026 | Git / GitHub Collaboration |
+| 7 | - **Network Architecture Finalization & Review:** Collaborated with the team to review and redraw the detailed Infrastructure Architecture Diagram (Multi-AZ, ALB, VPC Endpoints, NAT Gateway, EFS, and AWS WAF). Supported the AWS team in resolving initial bottlenecks regarding container connection routing. | 04/07/2026 | 05/07/2026 | Internal Team, AWS Architecture Diagrams |
 
 ### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Enforcing the Principle of Least Privilege:** Successfully applied the RBAC model and Data Segregation, thoroughly solving the user data privacy issue while maintaining the centralized monitoring and statistical capabilities of the Admin.
+* **Core Web Features Finalization:** Cleanly resolved logic bugs in the account management module, making the application highly reliable and ready to serve multiple concurrent test users.
+* **Teamwork & Delivery:** Successfully handed over the optimized and rigorously tested source code on the Docker virtualized environment, paving the way for a smooth deployment to the cloud infrastructure.
+* **System Design Standardization:** Finalized the detailed architectural topology diagram, providing a solid foundation for calculating the cost estimate (AWS Calculator) and establishing the theoretical basis for network infrastructure in the final report.

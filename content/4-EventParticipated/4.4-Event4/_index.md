@@ -1,70 +1,67 @@
 ---
 title: "Event 4"
-date: 2026-05-30
-weight: 2
+date: 2026-06-06
+weight: 4
 chapter: false
 pre: " <b> 4.4. </b> "
 ---
 
-# Summary Report: “AWS Student Builder Group: Build Voice Agents at Scale”
+# Event Summary Report: “AWS Student Builder Group - Kiro Spec-Driven Development”
 
 ### Event Objectives
-* Understand the architecture of AI Voice Agents on the cloud.
-* Learn how to utilize Amazon Bedrock AgentCore for generative AI capabilities.
-* Explore best practices for deploying and scaling conversational AI applications on AWS.
-* Discuss real-world use cases of AI integration in automated workflows.
+* Understand the concept and methodology of Spec-Driven Development.
+* Explore the overall role of the Kiro platform in AI-assisted software engineering.
+* Discover the workflow of transforming raw Requirements into clear Specifications, System Architecture, and Deployment Plans.
+* Improve team collaboration mindsets and make better architectural decisions to effectively leverage AI.
 
-### Speakers & Host
-* **Kiệt Trần** – AI Developer / Guest Speaker
-* **Danh Hoàng Hiếu Nghị** – Host / AWS Student Builder Group at HUFLIT
+### Speakers & Moderator
+* **Quang Tinh Truong** – Main Speaker
+* **Kiet Tran** – Guest Speaker
+* **Danh Hoang Hieu Nghi** – Moderator (Host) / AWS Student Builder Group at HUFLIT
 
 ---
 
 ### Key Highlights
 
-#### 1. Introduction to Amazon Bedrock AgentCore
-* **Capabilities:** How Bedrock AgentCore simplifies the creation of generative AI applications by managing API calls, context windows, and conversation history.
-* **Foundation Models:** Selecting the right LLMs for voice-to-text and text-to-voice generation workflows.
+#### 1. Introduction to Spec-Driven Development (SDD)
+* **Specification-first Mindset:** Shifting from rushing into coding or letting AI generate fragmented code, to focusing on clearly defining structures, constraints, and data flows right from the start.
+* **Importance:** Solves the issue of AI "hallucination," helping to generate reliable and maintainable code by providing an overall context.
 
-#### 2. Designing Voice Agent Architecture
-* **Data Flow:** The process of capturing voice input, transcribing, processing intent with LLMs, and synthesizing voice output.
-* **Serverless Integration:** Utilizing AWS Lambda and API Gateway to create responsive, low-latency interactions for the voice agent.
+#### 2. Kiro and AI-Assisted Engineering
+* **The Role of Kiro:** Acts as a platform to shape and standardize raw requirements into technical specifications, guiding AI coding assistants to produce code that adheres to architectural standards.
+* **The Power of Markdown (.md):** A standout feature is the ability to comprehend, summarize, and automate the creation of system specification files in Markdown format, enabling transparent storage and easy synchronization with the source code.
 
-#### 3. Scaling and Operational Best Practices
-* **Performance:** Strategies for handling high-concurrency requests and optimizing latency in real-time voice processing.
-* **Security:** Securing prompts, managing IAM permissions for Bedrock, and ensuring data privacy within the cloud environment.
+#### 3. Practical Architectural Deployment (Guest Sharing)
+* **AgentCore Runtime Deployment Pattern:** Guest speaker Kiet Tran shared insights on the deployment model for AI Voice Agents, emphasizing the packaging of pipelines into Containers and using MicroVM mechanisms for Session isolation.
+* **Network & Security:** Demonstrated the application of TURN servers and NAT Gateway configurations within a VPC to ensure secure, high-speed WebRTC connections.
 
 ---
 
 ### Key Takeaways
-* **AI Mindset:** Shifting from traditional rule-based chatbots to dynamic, context-aware AI agents powered by Foundation Models.
-* **Architecture:** Mastering the integration between AI services (Amazon Bedrock) and serverless compute (Lambda) to build highly scalable solutions.
-* **Efficiency:** Leveraging managed services allows builders to focus on business logic and agent persona rather than underlying infrastructure.
+* **System Design Thinking:** AI-generated code is only truly safe and valuable when guided by a standardized architectural design.
+* **AI Risk Management:** Business logic should not be entirely handed over to AI. Engineers must hold and control the core system specifications.
+* **Deployment Architecture:** Grasped the methodology of system segregation (Container-Session isolation) to securely operate AI models in Cloud environments.
 
-### Applying to Work
-* **AI Integration:** Explore applying Bedrock and generative AI concepts into automated threat analysis or SOC workflows (e.g., using AI agents to summarize security logs and investigate malware behaviors).
-* **Serverless Compute:** Standardize the use of AWS Lambda for triggering automated, event-driven tasks.
-* **Innovation:** Pilot internal tools utilizing AI agents to speed up information retrieval and system querying within the cloud environment.
+### Application to Work
+* **Project Structuring:** Apply the spec-first method to write API documentation, map network communication flows, and establish security modules before writing actual code for the malware detection system.
+* **Prompting Optimization:** Require AI to critically review architectures, configure security (WAF, VPC), and output in clear Markdown formats before generating infrastructure configuration files.
+* **Infrastructure Utilization:** Apply the Container isolation model and NAT Gateway routing (learned from the Voice Agent pattern) to establish a secure environment for the malicious PE file analysis system.
 
 ---
 
 ### Event Experience
-The event provided a practical, deep dive into the rapidly growing field of Generative AI on AWS.
+The online event provided a highly practical perspective on how to control AI in modern programming through a specification-driven approach.
 
-**Learning from industry experts**
-* The speaker shared **best practices** in building and scaling AI agents, making complex Bedrock concepts easy to digest.
-* Real-world demonstrations clarified how foundation models interact with external APIs to execute automated tasks.
+**Approaching the Platform at a High Level**
+* Since there were not many deep, complex technical questions, the sharing session on Kiro functioned more as a surface-level introduction, helping the audience easily grasp the core concept and foundational mindset of Spec-Driven Development. However, the short sharing by the guest speaker on the AgentCore deployment model provided highly practical network architecture value.
 
-**Hands-on technical exposure**
-* Visualized the **data flow** of real-time conversational AI systems.
-* Gained insights into overcoming latency and state-management challenges in voice-based applications.
+**Networking Value and Q&A Discussion**
+* Despite the small number of questions, the highlight of the Q&A was a very sharp direct comparison: Kiro acts as an architect (focusing on `.md` files and the overall context), whereas tools like GitHub Copilot Pro act more as local coding assistants.
 
-**Networking and discussions**
-* The Q&A session highlighted common pitfalls developers face when transitioning to generative AI stacks.
-* Interacting with the HUFLIT Builder community provided motivation and fresh perspectives on cloud adoption.
+**Changing the Mindset of Working with AI**
+* The session eliminated the habit of abusing AI to generate "instant" code. Instead, it encouraged a mindset of transforming requirements into clear system design files, thereby bringing transparency to the software development process.
 
-#### Event Photos
-![Event Photo](image-1.png)
+#### Event Images
+![Event Image](image.png)
 
-
-> **Overall:** The event successfully bridged the gap between theoretical AI concepts and practical cloud engineering, equipping me with the knowledge to start integrating Amazon Bedrock into future operational and security projects.
+> **Overall Assessment:** A practical event that directly addresses modern software development trends. The knowledge of Spec-Driven Development, along with architectural deployment patterns, serves as extremely useful foundational knowledge that I can immediately apply to standardizing documentation and establishing the network topology for my current graduation project.

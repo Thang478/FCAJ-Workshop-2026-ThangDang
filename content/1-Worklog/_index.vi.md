@@ -22,10 +22,10 @@ pre: " <b> 1. </b> "
 
 **Tuần 8:** [Tích hợp mã nguồn (PE & URL Scanner), Container hóa Docker và Tái cấu trúc Multi-container](1.8-week8/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+**Tuần 9:** [Phân quyền Auth, Phân lập dữ liệu và Hoàn thiện kiến trúc hạ tầng](1.9-week9/)
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+**Tuần 10:** [Làm công việc J...](1.10-week10/)
 
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
+**Tuần 11:** [Làm công việc K...](1.11-week11/)
 
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [Làm công việc L...](1.12-week12/)

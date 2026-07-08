@@ -6,11 +6,11 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**Week 1:** [Introduction to AWS and core AWS services](1.1-week1/)
+**Week 1:** [Introduction to AWS and Basic AWS Services](1.1-week1/)
 
 **Week 2:** [Amazon VPC Architecture, Network Security, and AWS Site-to-Site VPN Deployment](1.2-week2/)
 
-**Week 3:** [Compute VM Theory, Automated Backups with AWS Backup, Network Routing with AWS Transit Gateway, and Project Planning](1.3-week3/)
+**Week 3:** [Compute VM Theory, Automated Backup with AWS Backup, Network Routing with AWS Transit Gateway, and Project Planning](1.3-week3/)
 
 **Week 4:** [Amazon S3 Security, Application Packaging with Docker, and MLOps Pipeline Development](1.4-week4/)
 
@@ -20,12 +20,12 @@ pre: " <b> 1. </b> "
 
 **Week 7:** [Amazon Cognito Identity Management, Serverless Monitoring, and SOC Architecture Design](1.7-week7/)
 
-**Week 8:** [Source Code Integration (PE & URL Scanner), Docker Containerization, and Multi-container Refactoring](1.8-week8/)
+**Week 8:** [Source Code Integration (PE & URL Scanner), Docker Containerization, and Multi-container Restructuring](1.8-week8/)
 
-**Week 9:** [Pending Task I...](1.9-week9/)
+**Week 9:** [Auth Authorization, Data Segregation, and Infrastructure Architecture Finalization](1.9-week9/)
 
-**Week 10:** [Pending Task L...](1.10-week10/)
+**Week 10:** [Task J placeholder...](1.10-week10/)
 
-**Week 11:** [Pending Task M...](1.11-week11/)
+**Week 11:** [Task K placeholder...](1.11-week11/)
 
-**Week 12:** [Pending Task N...](1.12-week12/)
+**Week 12:** [Task L placeholder...](1.12-week12/)

@@ -78,6 +78,6 @@ The event provided a comprehensive view of Cloud Native and AI applications in p
 * Real-world examples reinforced the importance of focusing on business problems rather than just the technology itself.
 
 #### Event Photos
-![alt text](image-3.png)
+![alt text](image.png)
 
 > **Overall:** The event provided not only deep technical knowledge but also reshaped my mindset regarding system design, operational resilience, and cross-team collaboration.
