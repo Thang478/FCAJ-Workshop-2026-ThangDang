@@ -1,57 +1,26 @@
 ---
 title: "Week 10 Worklog"
-date: 2024-01-01
+date: 2026-07-12
 weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 10 Objectives:
+* Optimize and finalize the AWS Architecture Topology diagram based on in-depth feedback from experts.
+* Perform cost estimation and Cloud FinOps optimization using the AWS Pricing Calculator.
+* Aggregate community contributions and edit an in-depth technical blog post.
+* Prepare all Proposal documentation for the upcoming Workshop and presentation scripts for the team.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks Completed During the Week:
+| Day | Task | Start Date | End Date | References |
+| --- | --- | --- | --- | --- |
+| 2 | - **AWS Architecture Refinement:** Received feedback and adjusted the draw.io diagram: (1) Re-routed the connection from CloudFront directly into the Internet Gateway (IGW); (2) Redrew the AWS Fargate Task block accurately; (3) Removed icons for External Services and renamed them as self-developed services to avoid confusion. | 06/07/2026 | 06/07/2026 | AWS Architecture Icons, Admin Feedback |
+| 3-4 | - **Cost Calculation & FinOps:** Detailed cost calculations for 7 services (Fargate, ALB, EFS, VPC, CloudFront, WAF, Secrets Manager) in the Singapore Region (AP-Southeast-1). Optimized the NAT Gateway configuration, finalizing the estimated cost at ~$103/month. Exported the detailed PDF estimate. | 07/07/2026 | 08/07/2026 | AWS Pricing Calculator |
+| 5-6 | - **Community Blog Editing & Aggregation:** Reviewed and aggregated a technical article previously published on the AWS Study Group VN (on June 23) regarding *"Cost Optimization and Network Architecture with AWS Network Firewall & Transit Gateway."* Systematized the content for inclusion in the FCAJ community competency evaluation portfolio. | 09/07/2026 | 10/07/2026 | AWS Security Blog |
+| 7 | - **Workshop Documentation Prep:** Drafted a complete 8-part Proposal. Prepared a bilingual (Vietnamese/English) architecture description and drafted presentation scripts to align the team's content. Monitored the team's AWS deployment progress. | 11/07/2026 | 12/07/2026 | FCAJ Workshop Guidelines |
 
 ### Week 10 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Production-Ready Architecture:** Completely resolved routing logic errors (CloudFront -> IGW) and finalized the detailed AWS diagram, successfully defending the rationale for using ALB and EFS to the experts.
+* **Financial Optimization:** Successfully adjusted the network configuration, bringing the total cost estimate down to ~$103/month, ensuring an optimal operational budget for the project.
+* **Community Contribution:** Acknowledged and systematized research capabilities through an in-depth article on AWS Security (Transit Gateway Native Attachment), affirming a flexible security architecture mindset (Flexible cost allocation).
