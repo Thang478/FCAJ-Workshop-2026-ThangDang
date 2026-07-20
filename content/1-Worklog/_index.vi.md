@@ -1,6 +1,6 @@
 ---
 title: "Nhật ký công việc"
-date: 2026-05-04
+date: 2026-05-05
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
@@ -24,8 +24,8 @@ pre: " <b> 1. </b> "
 
 **Tuần 9:** [Phân quyền Auth, Phân lập dữ liệu và Hoàn thiện kiến trúc hạ tầng](1.9-week9/)
 
-**Tuần 10:** [Làm công việc J...](1.10-week10/)
+**Tuần 10:** [Tối ưu kiến trúc AWS, Dự toán chi phí (FinOps), Đóng góp cộng đồng và Chuẩn bị Proposal](1.10-week10/)
 
-**Tuần 11:** [Làm công việc K...](1.11-week11/)
+**Tuần 11:** [Xây dựng Website Workshop, Tài liệu hóa hạ tầng thực tế, Viết Blog và Đánh giá cá nhân](1.11-week11/)
 
-**Tuần 12:** [Làm công việc L...](1.12-week12/)
+**Tuần 12:** [Kiểm thử UAT, Sản xuất Video Demo, Nộp hồ sơ FCAJ và Hoàn tất thủ tục thực tập](1.12-week12/)

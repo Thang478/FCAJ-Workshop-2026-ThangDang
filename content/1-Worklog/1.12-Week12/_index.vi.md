@@ -1,58 +1,26 @@
 ---
 title: "Worklog Tuần 12"
-date: 2024-01-01
-weight: 12
+date: 2026-07-26
+weight: 11
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 12:
+### Mục tiêu Tuần 12:
+* Kiểm thử nghiệm thu (UAT) hệ thống MalScan AI trên môi trường Live AWS chính thức.
+* Quay và dựng Video Demo (3-5 phút) giới thiệu tổng quan kiến trúc và tính năng của hệ thống.
+* Đóng gói toàn bộ tài nguyên (Source Code, URL Workshop, Video Demo) và nộp lên FCAJ Portal.
+* Chuẩn bị hồ sơ, đánh giá tổng kết và hoàn thành các điều kiện cần thiết để xin cấp mộc xác nhận thực tập.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 2-3 | - **Kiểm thử UAT (Live Environment):** Thực hiện test end-to-end trên domain chính thức. Bắn tải thử nghiệm các mẫu file PE độc hại, tài liệu phishing và URL để xác nhận CloudFront/WAF lọc đúng traffic và mô hình ML trên Fargate trả về kết quả chính xác. Kiểm tra cơ chế Hash Cache (SQLite trên EFS). | 20/07/2026 | 21/07/2026 | Software Testing (UAT) Checklists |
+| 4-5 | - **Sản xuất Video Demo:** Xây dựng kịch bản demo trực quan. Tiến hành quay lại màn hình thao tác quét mã độc, kết hợp giải thích luồng định tuyến kiến trúc AWS (Topology 12 bước). Dựng video (3-5 phút) và upload lên nền tảng lưu trữ. | 22/07/2026 | 23/07/2026 | OBS Studio, Video Editing Tools |
+| 6 | - **Nộp hồ sơ FCAJ Portal:** Đóng gói hoàn chỉnh dự án. Truy cập FCAJ Portal để điền form nghiệm thu cuối kỳ. Cung cấp đầy đủ các liên kết: URL Public của Website Workshop, URL GitHub Repository (chứa source code MalScan AI) và link Video Demo. | 24/07/2026 | 24/07/2026 | FCAJ Submission Portal |
+| 7 | - **Hoàn thiện thủ tục nhận mộc:** Tổng hợp báo cáo cá nhân và kết quả nghiệm thu dự án. Đối chiếu với các tiêu chí đánh giá của đơn vị thực tập, tiến hành xin chữ ký xác nhận của Mentor/Admin FCAJ và chuẩn bị sẵn sàng hồ sơ cứng để nhận mộc xác nhận từ AWS phục vụ nộp về trường. | 25/07/2026 | 26/07/2026 | Quy định thực tập HUTECH, Nội bộ nhóm |
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Kết quả đạt được tuần 12:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Thành tựu Tuần 12:
+* **Nghiệm thu Hệ thống Thành công:** Hệ thống MalScan AI vận hành trơn tru trên môi trường AWS thực tế, vượt qua tất cả các kịch bản kiểm thử khắc nghiệt nhất (Live UAT).
+* **Hoàn tất Yêu cầu Thực tập (Bootcamp):** Submit thành công toàn bộ hồ sơ chất lượng cao lên FCAJ Portal đúng thời hạn, khép lại chương trình thực tập Bootcamp một cách xuất sắc.
+* **Hoàn thiện Thủ tục Hành chính:** Chuẩn bị đầy đủ và hợp lệ toàn bộ hồ sơ, báo cáo, minh chứng năng lực để đáp ứng các điều kiện khắt khe nhất cho việc nhận mộc đánh giá thực tập từ doanh nghiệp.

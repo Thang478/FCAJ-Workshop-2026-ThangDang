@@ -1,18 +1,18 @@
 ---
 title: "Worklog"
-date: 2026-05-04
+date: 2026-05-05
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**Week 1:** [Introduction to AWS and Basic AWS Services](1.1-week1/)
+**Week 1:** [Introduction to AWS and Core AWS Services](1.1-week1/)
 
 **Week 2:** [Amazon VPC Architecture, Network Security, and AWS Site-to-Site VPN Deployment](1.2-week2/)
 
 **Week 3:** [Compute VM Theory, Automated Backup with AWS Backup, Network Routing with AWS Transit Gateway, and Project Planning](1.3-week3/)
 
-**Week 4:** [Amazon S3 Security, Application Packaging with Docker, and MLOps Pipeline Development](1.4-week4/)
+**Week 4:** [Amazon S3 Security, Application Dockerization, and MLOps Pipeline Development](1.4-week4/)
 
 **Week 5:** [Serverless Architecture with Lambda, S3, DynamoDB, API Gateway, and Web App Containerization](1.5-week5/)
 
@@ -24,8 +24,8 @@ pre: " <b> 1. </b> "
 
 **Week 9:** [Auth Authorization, Data Segregation, and Infrastructure Architecture Finalization](1.9-week9/)
 
-**Week 10:** [Task J placeholder...](1.10-week10/)
+**Week 10:** [AWS Architecture Optimization, Cost Estimation (FinOps), Community Contribution, and Proposal Preparation](1.10-week10/)
 
-**Week 11:** [Task K placeholder...](1.11-week11/)
+**Week 11:** [Workshop Website Development, Actual Infrastructure Documentation, Technical Blogging, and Self-evaluation](1.11-week11/)
 
-**Week 12:** [Task L placeholder...](1.12-week12/)
+**Week 12:** [UAT Testing, Demo Video Production, FCAJ Portfolio Submission, and Internship Procedure Completion](1.12-week12/)
