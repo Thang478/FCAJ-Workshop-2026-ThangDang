@@ -1,31 +1,28 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
+date: 2026-07-08
 weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Flexible Manufacturing with AWS and SoftServe
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+SoftServe's flexible manufacturing solution heavily leverages the AWS ecosystem to meet the demand for automated product personalization without requiring hardware reconfiguration. Below are the core models and services that drive the success of this system.
 
 Key points to know:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+* Prototyping with GenAI (Design): Utilizes Amazon Nova Canvas (via Amazon Bedrock) to automatically generate product designs based on customer text requests.
+*Smart Orchestration: Amazon Bedrock Agents act as the "brain," automatically reasoning and making decisions to control robots without hard-coded programming.
+* Automated Workflow Processing (Serverless): AWS Lambda automatically processes and converts image file formats; AWS Step Functions and Amazon SQS seamlessly manage machine states and order queues.
+* AI Inspection (Vision QA): The Amazon Nova VLM (Vision Language Model) automatically compares photos of the finished product against the original design for quality assurance (Pass/Fail).
+* Cloud-to-Edge IoT Connectivity: AWS IoT Core connects the cloud to robots with ultra-low latency; AWS IoT Greengrass processes data at the edge, ensuring continuous operations even during intermittent network connectivity.
+*Security and Monitoring: Secures communications using Mutual TLS and monitors all system metrics and real-time robot latency via Amazon CloudWatch.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+The combination of AI, Serverless automation, and Edge IoT enables this AWS architecture to achieve nearly 100% efficiency, paving the way for short-run, highly customized production.
 
-...Image...
-
-...Link...
-
-...Guide...
+### Architecture Diagram
+![Architecture Diagram](diagram2.png)
+### References
+Detailed from the AWS Physical-AI Blog: [Flexible Manufacturing with AWS and SoftServe: How Simulation-First Robotics Reaches Production Faster]
+(https://aws.amazon.com/blogs/physical-ai/flexible-manufacturing-with-aws-and-softserve-how-simulation-first-robotics-reaches-production-faster/)
