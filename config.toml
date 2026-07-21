@@ -1,4 +1,5 @@
-baseURL = "https://workshop-sample.fcjuni.com/"
+baseURL = "https://Thang478.github.io/FCAJ-Workshop-2026-ThangDang/"
+publishDir = "docs"
 relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
