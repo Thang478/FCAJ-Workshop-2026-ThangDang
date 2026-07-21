@@ -12,7 +12,7 @@ pre: " <b> 2. </b> "
 
 ## 1. Tóm tắt điều hành
 
-MalScan AI là một nền tảng phát hiện mã độc hướng cộng đồng, hoạt động theo mô hình tương tự VirusTotal thu nhỏ. Hệ thống cho phép người dùng quét file thực thi PE (exe/dll), tài liệu Office (Word/Excel/PDF/HTML) và URL đáng ngờ để phát hiện mã độc bằng các mô hình Machine Learning (XGBoost, CNN). Đồng thời, hệ thống tích hợp vòng đời quản lý mô hình (MLOps) hoàn chỉnh cho phép Admin tự huấn luyện lại và triển khai mô hình mới mà không cần dừng hệ thống. Toàn bộ được triển khai trên AWS ECS Fargate với kiến trúc Container hóa, bảo vệ nhiều lớp (CloudFront + WAF + ALB) và lưu trữ bền vững qua Amazon EFS.
+MalScan AI là một nền tảng phát hiện mã độc hướng cộng đồng, hoạt động theo mô hình tương tự VirusTotal thu nhỏ. Hệ thống cho phép người dùng quét file thực thi PE (exe/dll), tài liệu Office (Word/Excel/PDF/HTML) và URL đáng ngờ để phát hiện mã độc bằng các mô hình Machine Learning (XGBoost, CNN). Đồng thời, hệ thống tích hợp vòng đời quản lý mô hình (MLOps) hoàn chỉnh cho phép Admin tự huấn luyện lại và triển khai mô hình mới mà không cần dừng hệ thống. Toàn bộ được triển khai trên AWS ECS Fargate với kiến trúc Container hóa, bảo vệ nhiều lớp (Route 53 + CloudFront + WAF + ALB) và lưu trữ bền vững qua Amazon EFS.
 
 ---
 
@@ -40,11 +40,11 @@ Hệ thống triển khai theo kiến trúc Container hóa trên AWS ECS Fargate
 - **Container 1 (Streamlit — Port 8501)**: Giao diện người dùng, PE Scanner, Document Scanner, URL Scanner, Model Management.
 - **Container 2 (Flask API — Port 5000)**: Xử lý riêng TensorFlow URL model (tách biệt để tránh xung đột thư viện numpy).
 
-![MalScan AI Architecture](<SƠ ĐỒ 4.drawio (8).png>)
+![MalScan AI Architecture](<SƠ ĐỒ 4.drawio (10).png>)
 
 *Luồng dữ liệu chính:*
 
-1. **(1) HTTPS Request:** User gửi request tới CloudFront (tích hợp AWS WAF lọc DDoS, SQL Injection, XSS tại Edge).
+1. **(1) HTTPS Request:** Người dùng truy cập hệ thống qua tên miền tùy chỉnh, được phân giải bởi Amazon Route 53 và định tuyến tới CloudFront (tích hợp AWS WAF lọc DDoS, SQL Injection, XSS tại Edge).
 2. **(2) Route valid traffic:** CloudFront định tuyến các traffic hợp lệ đi qua Internet Gateway để vào VPC.
 3. **(3) Forward port 443→8501:** Internet Gateway chuyển tiếp traffic đến Application Load Balancer tại Public Subnet.
 4. **(4) Streamlit App (port 8501):** ALB điều phối request vào AWS Fargate Task nằm ở Private Subnet.
@@ -60,9 +60,10 @@ Hệ thống triển khai theo kiến trúc Container hóa trên AWS ECS Fargate
 
 | Dịch vụ | Vai trò |
 |---|---|
+| Amazon Route 53 | Phân giải tên miền (DNS) và định tuyến người dùng một cách tin cậy |
 | Amazon ECS Fargate | Chạy 2 container không cần quản lý server |
 | Application Load Balancer | Điều phối traffic vào Private Subnet |
-| AWS WAF + CloudFront | Bảo vệ biên, chống DDoS Layer 7 |
+| AWS WAF + CloudFront | Bảo vệ biên, phân phối nội dung và chống DDoS Layer 7 |
 | Amazon ECR | Lưu trữ Docker Image |
 | Amazon EFS | Lưu trữ bền vững: ML models + SQLite |
 | Amazon VPC | Cô lập mạng: Public/Private Subnet, NAT Gateway, VPC Endpoints |
@@ -133,11 +134,12 @@ Hệ thống triển khai theo kiến trúc Container hóa trên AWS ECS Fargate
 | Amazon EFS (10GB Storage) | $4.14 |
 | AWS WAF ($8.02) + Amazon CloudFront ($1.36) | $9.38 |
 | AWS Secrets Manager (Quản lý 3 secrets) | $0.90 |
-| **Tổng chi phí ước tính** | **$154.10/tháng** |
+| Amazon Route 53 (1 Hosted Zone) | $0.50 |
+| **Tổng chi phí ước tính** | **$154.60/tháng** |
 
 *Chiến lược tối ưu chi phí:*
 - Thiết lập kiến trúc VPC Endpoints cho ECR và CloudWatch để giảm tải tối đa lưu lượng phải đi qua NAT Gateway.
-- Tổng chi phí dự kiến cho 12 tháng hoạt động là $1,849.20 (không có chi phí trả trước - Upfront cost: $0.00).
+- Tổng chi phí dự kiến cho 12 tháng hoạt động là $1,855.20 (không có chi phí trả trước - Upfront cost: $0.00).
 - Sử dụng AWS Budget Alert để cảnh báo sớm nếu chi phí phát sinh bất thường.
 
 ---
