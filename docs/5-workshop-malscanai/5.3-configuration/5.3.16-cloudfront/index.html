@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/FCAJ-Workshop-2026-ThangDang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=FCAJ-Workshop-2026-ThangDang/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.137.0">
+    <meta
+  name="description"
+  content=""
+/>
+<meta name="author" content="thienlh@thienlu.com" />
+
+    <link rel="icon" href="/FCAJ-Workshop-2026-ThangDang/images/favicon.png" type="image/png">
+
+    <title>Create the CloudFront Distribution :: Internship Report</title>
+
+    
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/nucleus.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/fontawesome-all.min.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/hybrid.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/featherlight.min.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/perfect-scrollbar.min.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/auto-complete.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/atom-one-dark-reasonable.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/theme.css?1784721024" rel="stylesheet">
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/hugo-theme.css?1784721024" rel="stylesheet">
+    
+    <link href="/FCAJ-Workshop-2026-ThangDang/css/theme-workshop.css?1784721024" rel="stylesheet">
+    
+    
+
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/jquery-3.3.1.min.js?1784721024"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+
+  </head>
+  <body class="" data-url="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.16-cloudfront/">
+    <nav
+  id="sidebar"
+  class="showVisitedLinks"
+>
+   
+  <div id="header-wrapper">
+    <div id="header"><a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#fff;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+</div>
+     <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/FCAJ-Workshop-2026-ThangDang/js/lunr.min.js?1784721024"></script>
+<script type="text/javascript" src="/FCAJ-Workshop-2026-ThangDang/js/auto-complete.js?1784721024"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/FCAJ-Workshop-2026-ThangDang\/";
+    
+</script>
+<script type="text/javascript" src="/FCAJ-Workshop-2026-ThangDang/js/search.js?1784721024"></script>
+ 
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+               
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/"
+  title="Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/">
+     <b> 1. </b> Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.1-week1/"
+  title="Week 1 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.1-week1/">
+    <b> 1.1. </b>Week 1 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.2-week2/"
+  title="Week 2 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.2-week2/">
+     <b> 1.2. </b> Week 2 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.3-week3/"
+  title="Week 3 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.3-week3/">
+     <b> 1.3. </b> Week 3 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.4-week4/"
+  title="Week 4 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.4-week4/">
+     <b> 1.4. </b> Week 4 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.5-week5/"
+  title="Week 5 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.5-week5/">
+     <b> 1.5. </b> Week 5 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.6-week6/"
+  title="Week 6 Work Log"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.6-week6/">
+     <b> 1.6. </b> Week 6 Work Log 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.7-week7/"
+  title="Week 7 Work Log"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.7-week7/">
+     <b> 1.7. </b> Week 7 Work Log 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.8-week8/"
+  title="Week 8 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.8-week8/">
+     <b> 1.8. </b> Week 8 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.9-week9/"
+  title="Week 9 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.9-week9/">
+     <b> 1.9. </b> Week 9 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.10-week10/"
+  title="Week 10 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.10-week10/">
+     <b> 1.10. </b> Week 10 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.11-week11/"
+  title="Week 11 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.11-week11/">
+     <b> 1.11. </b> Week 11 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.12-week12/"
+  title="Week 12 Worklog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/1-worklog/1.12-week12/">
+     <b> 1.12. </b> Week 12 Worklog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/"
+  title="Blogs Posted"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/">
+     <b> 3. </b> Blogs Posted 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/3.2-blog2/"
+  title="Blog 2"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/3.2-blog2/">
+     <b> 3.2. </b> Blog 2 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/3.1-blog1/"
+  title="Blog 1"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/3.1-blog1/">
+     <b> 3.1. </b> Blog 1 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/3.3-blog3/"
+  title="Blog 3"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/3-blogsposted/3.3-blog3/">
+     <b> 3.3. </b> Blog 3 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/"
+  title="Participated Events"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/">
+     <b> 4. </b> Participated Events 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.1-event1/"
+  title="Event 1"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.1-event1/">
+     <b> 4.1. </b> Event 1 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.2-event2/"
+  title="Event 2"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.2-event2/">
+     <b> 4.2. </b> Event 2 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.3-event3/"
+  title="Event 3"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.3-event3/">
+     <b> 4.3. </b> Event 3 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.4-event4/"
+  title="Event 4"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.4-event4/">
+     <b> 4.4. </b> Event 4 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.5-event5/"
+  title="Event 5"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/4-eventparticipated/4.5-event5/">
+     <b> 4.5. </b> Event 5 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/"
+  title="Workshop"
+  class="dd-item 
+        parent
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/">
+     <b> 5. </b> Workshop 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.1-project-overview/"
+  title="Project Overview"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.1-project-overview/">
+     <b> 5.1. </b> Project Overview 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.2-architecture/"
+  title="Deployment Architecture"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.2-architecture/">
+     <b> 5.2. </b> Deployment Architecture 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/"
+  title="System Configuration"
+  class="dd-item 
+        parent
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/">
+     <b> 5.3. </b> System Configuration 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.1-preparation/"
+  title="Environment Preparation"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.1-preparation/">
+     <b> 5.3.1. </b> Environment Preparation 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/"
+  title="Network Configuration"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/">
+     <b> 5.3.2. </b> Network Configuration 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.1-vpc/"
+  title="Create the VPC and Enable DNS"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.1-vpc/">
+     <b> 5.3.2.1. </b> Create the VPC and Enable DNS 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.2-subnets/"
+  title="Create the Subnets"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.2-subnets/">
+     <b> 5.3.2.2. </b> Create the Subnets 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.3-internet-access/"
+  title="Create Internet Connectivity"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.3-internet-access/">
+     <b> 5.3.2.3. </b> Create Internet Connectivity 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.4-route-tables/"
+  title="Configure the Route Tables"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.2-network/5.3.2.4-route-tables/">
+     <b> 5.3.2.4. </b> Configure the Route Tables 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.3-security-groups/"
+  title="Create the Security Groups"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.3-security-groups/">
+     <b> 5.3.3. </b> Create the Security Groups 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.4-secrets-manager/"
+  title="Store the VirusTotal API Key"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.4-secrets-manager/">
+     <b> 5.3.4. </b> Store the VirusTotal API Key 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.5-iam-roles/"
+  title="Create IAM Roles for ECS"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.5-iam-roles/">
+     <b> 5.3.5. </b> Create IAM Roles for ECS 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.6-efs/"
+  title="Create Amazon EFS"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.6-efs/">
+     <b> 5.3.6. </b> Create Amazon EFS 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.7-cloudwatch/"
+  title="Create the CloudWatch Log Group"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.7-cloudwatch/">
+     <b> 5.3.7. </b> Create the CloudWatch Log Group 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.8-ecr/"
+  title="Create ECR Repositories and Push Images"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.8-ecr/">
+     <b> 5.3.8. </b> Create ECR Repositories and Push Images 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.9-ecs-cluster/"
+  title="Create the ECS Cluster"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.9-ecs-cluster/">
+     <b> 5.3.9. </b> Create the ECS Cluster 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.10-task-definition/"
+  title="Create the ECS Task Definition"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.10-task-definition/">
+     <b> 5.3.10. </b> Create the ECS Task Definition 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.11-target-group/"
+  title="Create the Target Group"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.11-target-group/">
+     <b> 5.3.11. </b> Create the Target Group 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.12-alb/"
+  title="Create the Application Load Balancer"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.12-alb/">
+     <b> 5.3.12. </b> Create the Application Load Balancer 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.13-ecs-service/"
+  title="Create the ECS Service"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.13-ecs-service/">
+     <b> 5.3.13. </b> Create the ECS Service 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.14-route53/"
+  title="Configure Route 53"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.14-route53/">
+     <b> 5.3.14. </b> Configure Route 53 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.15-acm/"
+  title="Create the ACM Certificate"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.15-acm/">
+     <b> 5.3.15. </b> Create the ACM Certificate 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.16-cloudfront/"
+  title="Create the CloudFront Distribution"
+  class="dd-item 
+        
+        active
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.16-cloudfront/">
+     <b> 5.3.16. </b> Create the CloudFront Distribution 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.17-protect-alb/"
+  title="Restrict Direct Access to the ALB"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.17-protect-alb/">
+     <b> 5.3.17. </b> Restrict Direct Access to the ALB 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/6-self-evaluation/"
+  title="Self-Evaluation"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/6-self-evaluation/">
+     <b> 6. </b> Self-Evaluation 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+           
+<li
+  data-nav-id="/FCAJ-Workshop-2026-ThangDang/7-feedback/"
+  title="Sharing &amp; Feedback"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/FCAJ-Workshop-2026-ThangDang/7-feedback/">
+     <b> 7. </b> Sharing &amp; Feedback 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+    </ul>
+
+     
+    <section id="shortcuts">
+      <h3>
+        More
+      </h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://awsstudygroup.com"
+            ><i class='fab fa-aws'></i> AWS Study Group - Blog</a
+          >
+        </li>
+        
+        <li>
+          <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"
+            ><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a
+          >
+        </li>
+        
+      </ul>
+    </section>
+     
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+            <div class="select-style">
+              <select id="select-language" onchange="location = this.value;">
+                       
+                <option
+                  id="en"
+                  value="http://localhost:1313/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.16-cloudfront/"
+                  selected
+                >
+                  English
+                </option>
+                            
+                <option
+                  id="vi"
+                  value="http://localhost:1313/FCAJ-Workshop-2026-ThangDang/vi/5-workshop-malscanai/5.3-configuration/5.3.16-cloudfront/"
+                >
+                  Tiếng Việt
+                </option>
+                   
+              </select>
+              <svg
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="255px"
+                height="255px"
+                viewBox="0 0 255 255"
+                style="enable-background: new 0 0 255 255"
+                xml:space="preserve"
+              >
+                <g>
+                  <g id="arrow-drop-down">
+                    <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+         
+        <li>
+          <a class="padding" href="#" data-clear-history-toggle=""
+            ><i class="fas fa-history fa-fw"></i> Clear History</a
+          >
+        </li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer"><left>
+    <br>
+    <br>
+    <b> Last Updated </b> <br>
+    <i>
+        <font color=orange>22-07-2026</font>
+    </i>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
+    <i>
+        <a href="https://www.facebook.com/groups/660548818043427" style="color:orange">First Cloud AI Journey</a>
+    </i>
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script></section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/FCAJ-Workshop-2026-ThangDang/'>Internship Report</a> > <a href='/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/'>Workshop</a> > <a href='/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/'>System Configuration</a> > Create the CloudFront Distribution
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+  <div class="wrapper"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-start-creating-the-distribution">1. Start creating the Distribution</a></li>
+    <li><a href="#2-select-the-alb-as-the-origin">2. Select the ALB as the Origin</a></li>
+    <li><a href="#3-configure-the-cache-behavior">3. Configure the Cache Behavior</a></li>
+    <li><a href="#4-configure-waf">4. Configure WAF</a></li>
+    <li><a href="#5-review-and-create-the-distribution">5. Review and create the Distribution</a></li>
+    <li><a href="#6-attach-the-domain-and-certificate">6. Attach the domain and certificate</a></li>
+    <li><a href="#7-create-the-route-53-alias-record">7. Create the Route 53 Alias record</a></li>
+  </ul>
+</nav></div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Create the CloudFront Distribution
+            </h1>
+          
+
+        
+
+
+
+	<h1 id="place-cloudfront-and-waf-in-front-of-the-alb">Place CloudFront and WAF in front of the ALB</h1>
+<p>CloudFront is the public entry point for MalScanAI. Users connect to CloudFront through HTTPS, and CloudFront forwards valid requests to the ALB.</p>
+<h2 id="1-start-creating-the-distribution">1. Start creating the Distribution</h2>
+<p>Go to <strong>CloudFront → Distributions</strong> and choose <strong>Create distribution</strong>. If the console displays plan options, select the plan that fits the demonstration and avoid optional paid features that are not required.</p>
+<p><img alt="Select the CloudFront plan" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-plan.png"></p>
+<p><img alt="Start creating the Distribution" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-start.png"></p>
+<h2 id="2-select-the-alb-as-the-origin">2. Select the ALB as the Origin</h2>
+<p>Under Origin, configure:</p>
+<ul>
+<li><strong>Origin domain:</strong> the DNS name of <code>malscanai-alb</code></li>
+<li><strong>Origin type:</strong> Custom origin / ALB</li>
+<li><strong>Origin protocol:</strong> HTTP in the current setup</li>
+</ul>
+<p><img alt="Select the ALB origin" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-origin.png"></p>
+<p>CloudFront does not call the ECS task directly. The ALB continues to perform health checks and sends requests only to healthy targets.</p>
+<h2 id="3-configure-the-cache-behavior">3. Configure the Cache Behavior</h2>
+<p>Streamlit is a dynamic application, so the team does not cache it like a static website. Main settings include:</p>
+<ul>
+<li><strong>Viewer protocol policy:</strong> Redirect HTTP to HTTPS</li>
+<li><strong>Allowed methods:</strong> allow the methods required by the application</li>
+<li>Forward the cookies, query strings, and headers required by the Streamlit session</li>
+</ul>
+<p><img alt="Cache Behavior configuration" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-settings.png"></p>
+<p><img alt="Allowed HTTP methods" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-methods.png"></p>
+<p>Incorrect caching of HTML or session data can return stale content or disrupt WebSocket connections, so the behavior is configured for a dynamic application.</p>
+<h2 id="4-configure-waf">4. Configure WAF</h2>
+<p>In the protection section, the team keeps the WAF protection included with the selected plan and does not add advanced rules outside the project scope.</p>
+<p><img alt="WAF configuration" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-waf.png"></p>
+<p>WAF filters requests before they reach the ALB. The next step prevents users from easily bypassing this layer through the ALB DNS name.</p>
+<h2 id="5-review-and-create-the-distribution">5. Review and create the Distribution</h2>
+<p>Review the Origin, behavior, and WAF settings, then choose <strong>Create distribution</strong>.</p>
+<p><img alt="Review CloudFront" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-review.png"></p>
+<p><img alt="Created CloudFront Distribution" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/cloudfront-created.png"></p>
+<h2 id="6-attach-the-domain-and-certificate">6. Attach the domain and certificate</h2>
+<p>Add the alternate domain name:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>malscanai.sadc.io.vn
+</span></span></code></pre></div><p><img alt="Add the alternate domain name" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/alternate-domain.png"></p>
+<p>Select the ACM certificate with status <code>Issued</code> in <code>us-east-1</code>.</p>
+<p><img alt="Select the ACM certificate" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/certificate-selected.png"></p>
+<h2 id="7-create-the-route-53-alias-record">7. Create the Route 53 Alias record</h2>
+<p>After the Distribution becomes <code>Deployed</code>, return to Route 53 and create an Alias A record:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Record name: malscanai
+</span></span><span style="display:flex;"><span>Route traffic to: CloudFront Distribution
+</span></span></code></pre></div><p><img alt="Create the Alias to CloudFront" src="/images/5-Workshop-MalScanAI/5.3.16-CloudFront/route53-alias.png"></p>
+<p>The domain <code>malscanai.sadc.io.vn</code> now resolves to CloudFront instead of directly to the ALB.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.15-acm/" title="Create the ACM Certificate"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/FCAJ-Workshop-2026-ThangDang/5-workshop-malscanai/5.3-configuration/5.3.17-protect-alb/" title="Restrict Direct Access to the ALB" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/clipboard.min.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/perfect-scrollbar.min.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/perfect-scrollbar.jquery.min.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/jquery.sticky.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/featherlight.min.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/highlight.pack.js?1784721024"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/modernizr.custom-3.6.0.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/learn.js?1784721024"></script>
+    <script src="/FCAJ-Workshop-2026-ThangDang/js/hugo-learn.js?1784721024"></script>
+
+    <link href="/FCAJ-Workshop-2026-ThangDang/mermaid/mermaid.css?1784721024" rel="stylesheet" />
+    <script src="/FCAJ-Workshop-2026-ThangDang/mermaid/mermaid.js?1784721024"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    ((i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date()));
+    ((a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]));
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga",
+  );
+
+  ga("create", "UA-158079754-2", "auto");
+  ga("send", "pageview");
+</script>
+
+  </body>
+</html>
