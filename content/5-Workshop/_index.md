@@ -23,3 +23,7 @@ There is no separate results chapter. At the end of each configuration step, the
 {{% notice note %}}
 Domain names, resource IDs, and several values in the screenshots belong to our lab environment. Use your own resource names and never copy secret values from screenshots.
 {{% /notice %}}
+
+#### Demo Video
+
+📺 [Click here to watch the MalScanAI Demo Video](https://drive.google.com/file/d/1H0fn-DJBwUtcIOCNBVlZHzQekS9tQYFk/view?usp=drivesdk)
